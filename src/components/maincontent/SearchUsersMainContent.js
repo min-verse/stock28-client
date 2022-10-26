@@ -121,34 +121,14 @@ function SearchUsersMainContent() {
                         }}
                     >Search</button>}
             </form>
-            <Container style={loading ? { height: '75vh', opacity: 0.5 } : { height: '75vh', borderRadius:10, overflowY:'auto' }} className="stock-container">
-            <Row>
-                {results && results.length && results.length > 0 ? 
-                    <UserResultsList results={results} />
-                :
-                <h2 style={{ padding: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="section-headers">Please search for users to follow.</h2>
-                }
-            </Row>
-                {/* {results ?
-                    <Row style={{ padding: 20 }}>
-                        <Col xs={4}>
-                            <h2 className="section-headers">{results['stock']['name']}</h2>
-                            <small className="ticker" style={{ color: 'black' }}><span style={{ fontWeight: "bold" }}>Ticker Symbol: </span>{results['stock']['ticker']}</small>
-                            <h6 style={{ color: 'black', fontStyle: 'italic', fontWeight: 'bold' }}>Description</h6>
-                            <p style={{ color: 'black', height: '40vh', overflowY: 'scroll' }}>{results['stock']['description']}</p>
-                            {canAdd ? <button onClick={handleAdd}>Add to Portolio</button> : <button style={{ backgroundColor: 'gray', fontStyle: 'italic' }} disabled>{errorMessage}</button>}
-                        </Col>
-                        <Col xs={8}>
-                            <StockPriceChart chartData={chartData} />
-                            {loading ?
-                                <button style={{ float: 'right' }} disabled>Refresh Data</button>
-                                :
-                                <button onClick={handleRefresh} style={{ float: 'right' }}>Refresh Data</button>}
-                        </Col>
-                    </Row> :
-                    <Row style={{ padding: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Container style={loading ? { height: '75vh', opacity: 0.5 } : { height: '75vh', borderRadius: 10, overflowY: 'auto' }} className="stock-container">
+                <Row>
+                    {results && results.length && results.length > 0 ?
+                        <UserResultsList results={results} />
+                        :
                         <h2 style={{ padding: 20, display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="section-headers">Please search for users to follow.</h2>
-                    </Row>} */}
+                    }
+                </Row>
             </Container>
         </div>
     </main>);

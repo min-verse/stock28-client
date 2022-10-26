@@ -72,17 +72,6 @@ function UserListing({ id, firstName, lastName, stocks }) {
                 <button onClick={handleAdd} style={{ width: "10vw", float: "right" }}>Follow User</button>:
                 <button style={{ width: "10vw", float: "right" }} disabled>Already Following</button>
                 }
-
-            {/* {loading || refreshLoading ?
-                <button
-                    disabled>
-                    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    Updating...</button>
-                :
-                <button
-                    onClick={deleteStock}>
-                    Remove Tracking
-                </button>} */}
         </div>
     );
 }

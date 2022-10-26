@@ -1,12 +1,8 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-
 
 function NewsFeature({ featured }) {
 
-    const { headline, datetime, image, summary, url, source } = featured;
-
-
+    const { headline, image, summary, url, source } = featured;
 
     return (
         <div className="news-card">

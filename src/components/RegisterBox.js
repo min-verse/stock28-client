@@ -22,8 +22,6 @@ function RegisterBox({ handleClick }) {
         navigate('/home');
     }
 
-
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);

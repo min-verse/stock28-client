@@ -46,7 +46,7 @@ function AddStockMenuLinks() {
                     </li>
                 </Link>
             </ul>
-        </div >
+        </div>
     );
 }
 

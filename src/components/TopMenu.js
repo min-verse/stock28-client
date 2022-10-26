@@ -1,6 +1,4 @@
 import React from "react";
-import GenrePicker from "./GenrePicker";
-import StockList from "./StockList";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {clearUser} from "./state/user";
@@ -29,7 +27,6 @@ function TopMenu() {
           <span className="profile-logo" role="img" aria-label="user">
             👤
           </span>
-          {/* <span className="profile-menu">Hi, {user["first_name"]}</span> */}
           <span className="profile-menu">Hi, {user['profile']['first_name']}</span>
         </button><ul>
                         <li><Link to="/edit-profile">Edit Profile</Link></li>

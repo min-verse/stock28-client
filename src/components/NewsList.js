@@ -1,7 +1,5 @@
 import React from "react";
-import StockListing from "./StockListing";
 import NewsListing from "./NewsListing";
-import { stocks } from "../data/stocks";
 
 function NewsList({ articles, handleClickFeatured }) {
     return (

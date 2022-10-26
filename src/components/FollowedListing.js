@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Card from 'react-bootstrap/Card';
 import { useDispatch } from "react-redux";
 import { setFollowing } from "./state/user";
 

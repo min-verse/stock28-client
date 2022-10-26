@@ -1,9 +1,7 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-
 
 function NewsListing({ article, handleClickFeatured }) {
-  const { headline, url, source } = article;
+  const { headline, source } = article;
   function handleClick() {
     handleClickFeatured(article);
   }

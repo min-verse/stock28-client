@@ -67,7 +67,6 @@ function StockPriceChart({ chartData }) {
         },
     };
 
-    // const labels = chartData['dates'];
     const labels = dates;
 
     const data = {
@@ -77,7 +76,6 @@ function StockPriceChart({ chartData }) {
                 fill: true,
                 label: `${ticker} Stock over Time`,
                 data: prices,
-                // data: chartData['prices'],
                 borderColor: 'rgb(53, 162, 235)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
             },

@@ -10,10 +10,8 @@ function Logo() {
     if (!playing) {
       smoothJazz.current.play();
       smoothJazz.current.loop = true;
-      // document.body.classList.add("party-time");
     } else {
       smoothJazz.current.pause();
-      // document.body.classList.remove("party-time");
     }
     setPlaying(!playing);
   }
@@ -21,11 +19,11 @@ function Logo() {
   return (
     <h1 className="logo">
       <span onClick={handleLogoClick} role="img" aria-label="paw">
-        ✨
+      📈
       </span>
       Stock28
       <span onClick={handleLogoClick} role="img" aria-label="paw">
-        ✨
+      📈
       </span>
     </h1>
   );

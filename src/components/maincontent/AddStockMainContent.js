@@ -192,10 +192,6 @@ function AddStockMainContent() {
           dispatch(setStocks([data, ...updatedStocks]));
         }
       })
-    // setLoading(true);
-    // setTimeout(() => {
-    //   setLoading(false);
-    // }, 3000);
   }
 
   
