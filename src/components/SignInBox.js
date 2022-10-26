@@ -90,7 +90,7 @@ export default function SignInBox({ handleClick }) {
                 }}
             >
                 <Typography component="h1" variant="h5">
-                    Stock28
+                    📈Stock28📈
                 </Typography>
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                     <AutoGraphIcon />

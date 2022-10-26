@@ -30,7 +30,14 @@ function Copyright(props) {
     );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+    typography:{
+        fontFamily:[
+            'Josefin Sans', 
+            'sans-serif'
+        ].join(','),
+    }
+});
 
 function LoginPage() {
     const [showRegister, setShowRegister] = useState(true);

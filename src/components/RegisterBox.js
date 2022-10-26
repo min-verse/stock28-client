@@ -22,6 +22,8 @@ function RegisterBox({ handleClick }) {
         navigate('/home');
     }
 
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
@@ -65,8 +67,8 @@ function RegisterBox({ handleClick }) {
                     alignItems: 'center',
                 }}
             >
-                <Typography component="h1" variant="h5">
-                    Stock28
+                <Typography component="h1" variant="h5" className="app-name">
+                    📈Stock28📈
                 </Typography>
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                     <DataSaverOnIcon />
