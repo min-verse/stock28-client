@@ -19,7 +19,6 @@ function DeleteForm({ handleShow }) {
     function handleSubmit(e){
         e.preventDefault();
         setLoading(true);
-        console.log(form);
         let token = localStorage.getItem("jwt");
         if (token) {
             fetch(`http://localhost:5000/deleteuser/${user['profile']['id']}`, {
@@ -49,8 +48,6 @@ function DeleteForm({ handleShow }) {
     function handleFormChange(e) {
         const name = e.target.name;
         const value = e.target.value;
-        console.log(form);
-        console.log(name, value);
         setForm((prevForm) => {
             return {
                 ...prevForm,

@@ -46,7 +46,6 @@ function AddStockMainContent() {
 
   function handleChange(e) {
     const newSearch = e.target.value;
-    console.log(newSearch);
     setSearch(newSearch);
   }
 
@@ -118,13 +117,11 @@ function AddStockMainContent() {
         body: JSON.stringify({ ticker: newSearch })
       }).then(res => res.json())
         .then((data) => {
-          console.log(data);
           setLoading(false);
           if (data['error'] && data['error'].includes("could not be found.")) {
             alert(data['error']);
           } else {
             if (data['error']) {
-              console.log(data);
               setCanAdd(false);
               setErrorMessage(data['error']);
               const dates = [];
@@ -165,7 +162,6 @@ function AddStockMainContent() {
     }).then(res => res.json())
       .then((data) => {
         setLoading(false);
-        console.log(data);
         const dates = [];
         const priceHistory = [];
         data['history'].map((item) => {

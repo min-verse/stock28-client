@@ -16,7 +16,6 @@ function EditProfileForm({ handleShow, showDelete }) {
     }
 
     useEffect(() => {
-        console.log("FIRST NAME", user['profile']['first_name'])
         setForm({
             first_name: user['profile']['first_name'],
             last_name: user['profile']['last_name']
@@ -27,7 +26,6 @@ function EditProfileForm({ handleShow, showDelete }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(form);
         let token = localStorage.getItem("jwt");
         if (token) {
             fetch(`http://localhost:5000/users/${user['profile']['id']}`, {
@@ -40,7 +38,6 @@ function EditProfileForm({ handleShow, showDelete }) {
                 body: JSON.stringify(form)
             }).then(res => res.json())
                 .then((data) => {
-                    console.log(data)
                     if (data['error']) {
                         setError(data['error']);
                     } else if (data['errors']) {
@@ -61,8 +58,6 @@ function EditProfileForm({ handleShow, showDelete }) {
     function handleFormChange(e) {
         const name = e.target.name;
         const value = e.target.value;
-        console.log(form);
-        console.log(name, value);
         setForm((prevForm) => {
             return {
                 ...prevForm,

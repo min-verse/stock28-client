@@ -41,7 +41,6 @@ function StockPriceChart({ chartData }) {
         })
             .then(res => res.json())
             .then((data) => {
-                console.log(data);
                 const newDates = [];
                 const newPrices = [];
                 data.map((item) => {

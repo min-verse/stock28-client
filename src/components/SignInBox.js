@@ -5,10 +5,10 @@ import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph'; import Typography from '@mui/material/Typography';
-import { setUser, setStocks, setPriceHistory, setDoughnutData, clearUser, clearStocksData, setFollowing } from "./state/user";
-import { useSelector, useDispatch } from 'react-redux';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph'; 
+import Typography from '@mui/material/Typography';
+import { setUser, setStocks, setPriceHistory, setDoughnutData, clearStocksData, setFollowing } from "./state/user";
+import { useDispatch } from 'react-redux';
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -45,7 +45,6 @@ export default function SignInBox({ handleClick }) {
                     return;
                 } else {
                     localStorage.setItem("jwt", data['token']);
-                    console.log(data);
                     dispatch(setUser(data['user']));
                     setLoading(false);
                     if (data['stocks'].length) {

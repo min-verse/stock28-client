@@ -32,7 +32,6 @@ function PortfolioMainContent() {
       return stock.id !== id;
     });
 
-    console.log(newStocks);
     if (newStocks.length) {
       const tickers = [];
       const dates = [];

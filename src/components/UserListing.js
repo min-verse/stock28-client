@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser, setStocks, setPriceHistory, setDoughnutData, clearUser, clearStocksData, setFollowing } from "./state/user";
+import { setFollowing } from "./state/user";
 
 
 function UserListing({ id, firstName, lastName, stocks }) {
@@ -14,7 +13,6 @@ function UserListing({ id, firstName, lastName, stocks }) {
     useEffect(()=>{
         if(user['following'].length && user['following'].length > 0){
             const bool = user['following'].some(person => person.id === id)
-            console.log(bool);
             setCanFollow(!bool);
         }
     },[]);

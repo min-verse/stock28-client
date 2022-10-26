@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import Logo from './logo.svg';
 import HomePage from './components/pages/HomePage';
 import PortfolioPage from './components/pages/PortfolioPage';
 import AddStockPage from './components/pages/AddStockPage';
@@ -24,7 +23,6 @@ function App() {
 
   useEffect(() => {
     let token = localStorage.getItem("jwt");
-    console.log(token);
     if (token) {
       fetch(`http://localhost:5000/profile`, {
         headers: {
@@ -35,7 +33,6 @@ function App() {
       })
         .then(res => res.json())
         .then((data) => {
-          console.log("HERE",data);
           if (data['error']) {
             alert(data['error']);
             goToLogin();

@@ -2,20 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import UserResultsList from "../UserResultsList";
 import { useDispatch } from "react-redux";
-import { setStocks, setDoughnutData, clearUser } from "../state/user";
-import StockPriceChart from "../StockPriceChart";
-
+import { clearUser } from "../state/user";
 
 function SearchUsersMainContent() {
     const [search, setSearch] = useState('');
     const [loading, setLoading] = useState(false);
     const [results, setresults] = useState();
-    const [errorMessage, setErrorMessage] = useState('');
-    const [canAdd, setCanAdd] = useState(true);
-    const [chartData, setChartData] = useState({});
 
     const dispatch = useDispatch();
 
@@ -44,7 +38,6 @@ function SearchUsersMainContent() {
 
     function handleChange(e) {
         const newSearch = e.target.value;
-        console.log(newSearch);
         setSearch(newSearch);
     }
 
@@ -65,34 +58,13 @@ function SearchUsersMainContent() {
                 body: JSON.stringify({ friend_search: newSearch })
             }).then(res => res.json())
                 .then((data) => {
-                    console.log(data);
                     setLoading(false);
                     if (data['error'] && data['error'].includes("No user found")) {
                         alert(data['error']);
                     } else {
                         if (data['error']) {
-                            console.log(data);
-                            // setCanAdd(false);
-                            // setErrorMessage(data['error']);
-                            // const dates = [];
-                            // const prices = [];
-                            // data['stock']['history'].map((item) => {
-                            //     dates.unshift(item['date']);
-                            //     prices.unshift(item['price']);
-                            //     return null;
-                            // });
-                            // setChartData({ ticker: data['stock']['ticker'], dates, prices });
-                            setresults(data);
+                            alert(data['error']);
                         } else {
-                            // setCanAdd(true);
-                            // const dates = [];
-                            // const prices = [];
-                            // data['stock']['history'].map((item) => {
-                            //     dates.unshift(item['date']);
-                            //     prices.unshift(item['price']);
-                            //     return null;
-                            // });
-                            // setChartData({ ticker: data['stock']['ticker'], dates, prices });
                             setresults(data);
                         }
                     }
