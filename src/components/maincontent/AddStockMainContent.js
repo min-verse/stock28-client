@@ -26,7 +26,7 @@ function AddStockMainContent() {
   useEffect(() => {
     let token = localStorage.getItem("jwt");
     if (token) {
-      fetch(`http://localhost:5000/myportfolio`, {
+      fetch(`https://stock28.onrender.com/myportfolio`, {
         headers: {
           token: token,
           'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ function AddStockMainContent() {
   function handleAdd() {
     let token = localStorage.getItem("jwt");
     if (token) {
-      fetch(`http://localhost:5000/user_stocks`, {
+      fetch(`https://stock28.onrender.com/user_stocks`, {
         method: 'POST',
         headers: {
           token: token,
@@ -107,7 +107,7 @@ function AddStockMainContent() {
     if (token) {
       setLoading(true);
       const newSearch = e.target.search.value.toUpperCase();
-      fetch("http://localhost:5000/stocksearch", {
+      fetch("https://stock28.onrender.com/stocksearch", {
         method: "POST",
         headers: {
           token: token,
@@ -153,7 +153,7 @@ function AddStockMainContent() {
   function handleRefresh() {
     setLoading(true);
     let token = localStorage.getItem("jwt");
-    fetch(`http://localhost:5000/stockrefresh/${result['stock']['id']}`, {
+    fetch(`https://stock28.onrender.com/stockrefresh/${result['stock']['id']}`, {
       token: token,
       headers: {
         'Content-Type': 'application/json',

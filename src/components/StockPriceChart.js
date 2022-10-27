@@ -32,7 +32,7 @@ function StockPriceChart({ chartData }) {
 
 
     useEffect(() => {
-        fetch('http://127.0.0.1:5000/stockhistory', {
+        fetch('https://stock28.onrender.com/stockhistory', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

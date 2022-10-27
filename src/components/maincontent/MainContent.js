@@ -25,7 +25,7 @@ function MainContent() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:5000/news`)
+    fetch(`https://stock28.onrender.com/news`)
       .then(res => res.json())
       .then((data) => {
         setArticles(data);
@@ -77,7 +77,7 @@ function MainContent() {
     let token = localStorage.getItem("jwt");
     if (token) {
       setLoading(true);
-      await fetch(`http://localhost:5000/refresh`, {
+      await fetch(`https://stock28.onrender.com/refresh`, {
         headers: {
           token: token,
           'Accept': 'application/json',
@@ -87,7 +87,7 @@ function MainContent() {
         alert(error);
         return null;
       })
-      await fetch(`http://localhost:5000/myportfolio`, {
+      await fetch(`https://stock28.onrender.com/myportfolio`, {
         headers: {
           token: token,
           'Accept': 'application/json',

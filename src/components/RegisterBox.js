@@ -33,7 +33,7 @@ function RegisterBox({ handleClick }) {
             firstName: data.get('firstName'),
             lastName: data.get('lastName')
         };
-        await fetch(`http://localhost:5000/users`, {
+        await fetch(`https://stock28.onrender.com/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

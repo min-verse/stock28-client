@@ -30,7 +30,7 @@ export default function SignInBox({ handleClick }) {
             password: data.get('password')
         };
         setLoading(true);
-        await fetch(`http://localhost:5000/login`, {
+        await fetch(`https://stock28.onrender.com/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

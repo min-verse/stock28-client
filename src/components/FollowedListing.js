@@ -22,7 +22,7 @@ function UserListing({ id, firstName, lastName, stocks, handleClick }) {
     async function deleteFollowing() {
         setLoading(true);
         let token = localStorage.getItem("jwt");
-        const result = await fetch(`http://localhost:5000/friendship/${id}`,{
+        const result = await fetch(`https://stock28.onrender.com/friendship/${id}`,{
             method:'DELETE',
             headers:{
                 token:token,

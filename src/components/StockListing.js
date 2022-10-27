@@ -21,7 +21,7 @@ function StockListing({ id, ticker, name, history, description, refreshLoading, 
       setLoading(true);
       let token = localStorage.getItem("jwt");
       if (token) {
-        await fetch(`http://localhost:5000/user_stocks/${id}`, {
+        await fetch(`https://stock28.onrender.com/user_stocks/${id}`, {
           method: "DELETE",
           headers: {
             token: token,

@@ -21,7 +21,7 @@ function DeleteForm({ handleShow }) {
         setLoading(true);
         let token = localStorage.getItem("jwt");
         if (token) {
-            fetch(`http://localhost:5000/deleteuser/${user['profile']['id']}`, {
+            fetch(`https://stock28.onrender.com/${user['profile']['id']}`, {
                 method: 'POST',
                 headers: {
                     token: token,

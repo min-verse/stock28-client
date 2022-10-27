@@ -28,7 +28,7 @@ function EditProfileForm({ handleShow, showDelete }) {
         e.preventDefault();
         let token = localStorage.getItem("jwt");
         if (token) {
-            fetch(`http://localhost:5000/users/${user['profile']['id']}`, {
+            fetch(`https://stock28.onrender.com/users/${user['profile']['id']}`, {
                 method: 'PATCH',
                 headers: {
                     token: token,

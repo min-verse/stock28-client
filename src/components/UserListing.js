@@ -21,7 +21,7 @@ function UserListing({ id, firstName, lastName, stocks }) {
         setLoading(true);
         let token = localStorage.getItem("jwt");
         if (token) {
-            fetch(`http://localhost:5000/friendships`, {
+            fetch(`https://stock28.onrender.com/friendships`, {
                 method: 'POST',
                 headers: {
                     token: token,

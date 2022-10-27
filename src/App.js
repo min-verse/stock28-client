@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     let token = localStorage.getItem("jwt");
     if (token) {
-      fetch(`http://localhost:5000/profile`, {
+      fetch(`https://stock28.onrender.com/profile`, {
         headers: {
           token: token,
           'Accept': 'application/json',

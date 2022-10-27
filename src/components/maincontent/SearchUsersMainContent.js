@@ -18,7 +18,7 @@ function SearchUsersMainContent() {
     useEffect(() => {
         let token = localStorage.getItem("jwt");
         if (token) {
-            fetch(`http://localhost:5000/myportfolio`, {
+            fetch(`https://stock28.onrender.com/myportfolio`, {
                 headers: {
                     token: token,
                     'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ function SearchUsersMainContent() {
         if (token) {
             setLoading(true);
             const newSearch = e.target.search.value.toLowerCase();
-            fetch("http://localhost:5000/usersearch", {
+            fetch("https://stock28.onrender.com/usersearch", {
                 method: "POST",
                 headers: {
                     token: token,
