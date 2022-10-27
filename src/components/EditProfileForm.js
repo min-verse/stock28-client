@@ -7,6 +7,7 @@ function EditProfileForm({ handleShow, showDelete }) {
 
     const [form, setForm] = useState({});
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ function EditProfileForm({ handleShow, showDelete }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        setLoading(true);
         let token = localStorage.getItem("jwt");
         if (token) {
             fetch(`https://stock28.onrender.com/users/${user['profile']['id']}`, {
@@ -38,6 +40,7 @@ function EditProfileForm({ handleShow, showDelete }) {
                 body: JSON.stringify(form)
             }).then(res => res.json())
                 .then((data) => {
+                    setLoading(false);
                     if (data['error']) {
                         setError(data['error']);
                     } else if (data['errors']) {
@@ -126,7 +129,12 @@ function EditProfileForm({ handleShow, showDelete }) {
                     }}
                 />
                 <div>
-                    <button type="submit">Submit Edits</button>
+                    {loading ? 
+                    <button disabled>
+                    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Submitting...
+                    </button>: 
+                    <button type="submit">Submit Edits</button>}
                     {showDelete ?
                         <button onClick={handleShow} type="button" className="delete-button" disabled>Delete Profile</button>
                         :

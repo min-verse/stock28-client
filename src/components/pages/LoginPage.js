@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
+import { useNavigate } from 'react-router-dom';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -31,10 +32,22 @@ const theme = createTheme({
 
 function LoginPage() {
     const [showRegister, setShowRegister] = useState(true);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         setShowRegister(!showRegister);
     }
+
+    function goToStockHome(){
+        navigate('/home');
+      }
+
+    useEffect(()=>{
+        let token = localStorage.getItem("jwt");
+        if(token){
+            goToStockHome();
+        }
+    },[]);
 
     return (
         <ThemeProvider theme={theme}>
